@@ -1,0 +1,3 @@
+per evitare che il gioco bugghi e lasci l'utente con un applicazione non funzionante, si sono aggiunto controlli su ogi singolo input:
+ogni dato dell'utente viene controllato e, se non previsto, viene riproposto all'utente.
+

@@ -32,15 +32,17 @@ int main()
 	    do
 	    {
             scanf(" %c", &risposta);
-            if(risposta != 'a' || risposta != 'b' || risposta != 'c') {
+            if((risposta >= 'd' && risposta <= 'z') || (risposta >= 'D' && risposta <= 'Z')) {
                 printf("\nsono accettati valori solo a/b/c \n");
             }
-	    }while(risposta != 'a' && risposta != 'b' && risposta != 'c');
+	    }while((risposta >= 'a' && risposta <= 'c') || (risposta >= 'A' && risposta <= 'C'));
 
-            if(risposta=='c')
+            if(risposta=='c' || risposta=='C')
             {
                	punteggio++;
             }
+
+
             system("clear");
             printf("Prima regola del fight club?\n"
                    "a) mai parlare del fight club\n"
@@ -49,12 +51,12 @@ int main()
             do
             {
                 scanf(" %c", &risposta);
-                if(risposta != 'a' || risposta != 'b' || risposta != 'c') {
+                if((risposta >= 'd' && risposta <= 'z') || (risposta >= 'D' && risposta <= 'Z')) {
                     printf("\nsono accettati valori solo a/b/c \n");
                 }
-            }while(risposta != 'a' && risposta != 'b' && risposta != 'c');
+            }while((risposta >= 'a' && risposta <= 'c') || (risposta >= 'A' && risposta <= 'C'));
 
-            if(risposta=='c')
+            if(risposta=='c' || risposta=='C')
             {
                	punteggio++;
             }
@@ -69,12 +71,12 @@ int main()
             do
             {
                 scanf(" %c", &risposta);
-                if(risposta != 'a' || risposta != 'b' || risposta != 'c') {
+                if((risposta >= 'd' && risposta <= 'z') || (risposta >= 'D' && risposta <= 'Z')) {
                     printf("\nsono accettati valori solo a/b/c \n");
                 }
-            }while(risposta != 'a' && risposta != 'b' && risposta != 'c');
+            }while((risposta >= 'a' && risposta <= 'c') || (risposta >= 'A' && risposta <= 'C'));
 
-            if(risposta=='c')
+            if(risposta=='c' || risposta=='C')
             {
                	punteggio++;
             }
