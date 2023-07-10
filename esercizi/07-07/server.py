@@ -17,23 +17,28 @@ print("waiting for data...")
 while 1:
     try:
         #buffer di 1024B 
-        data = connction.recv(1024)
+        data = connection.recv(1024)
+        print(data)
 
-    except: continue
+    except: 
+    	print("errore")
+    	continue
 
     a = data.decode('utf-8')
     stringa = a.split(sep="\n")
 
+
     #se client invia 1, il server fornisce i dati della macchina
     if(stringa[0] == '1'):
+        print('1')
         tosend = platform.platform() + " " + platform.machine()
         #invio delle info
-        connction.sendall(tosend.encode())
+        connection.sendall(tosend.encode())
     #se client invia 2, il server fornisce i file in una determinata directory
     elif(stringa[0] == '2'):
         #necessito del nome della cartella per mostrare il contenuto
         try:
-            data = connction.recv(1024)
+            data = connection.recv(1024)
         except:
             print ("Errore inserimento")
         try:
@@ -44,13 +49,15 @@ while 1:
                 tosend += ", " + x
         except:
             tosend = "Wrong path"
-        connction.sendall(tosend.encode())
+        connection.sendall(tosend.encode())
     #option 3 starts data flow / ddos attack
     elif(stringa == '3'):
         packet = 0
+        print("flooding started")
+        data = connection.recv(1024)
         while 1:
             packet += 1
-            data = connction.recv(1024)
+            data = connection.recv(1024)
             print("data nr " + packet + "recieved")
             if data.decode('utf-8') == '#': break
     #chiudo la connessione se invio 0
